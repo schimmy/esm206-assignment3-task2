@@ -467,7 +467,7 @@ sw_skin_sep &lt;- starwars %&gt;% # Start from starwars data
 mpg_make_model &lt;- mpg %&gt;% # Start with mpg
   unite(col = make_model, # Create a new column called &#39;make_model&#39;
         c(manufacturer, model), # That combines the manufacturer &amp; model column
-        sep = &quot;___&quot; # Puts &quot;HEY!&quot; between the pieces (default is underscore)
+        sep = &quot;___&quot; # Puts &quot;___&quot; between the pieces (default is underscore)
         ) 
 
 # Feel free to try different separators in the `sep = &quot;&quot;` argument above.
@@ -641,7 +641,7 @@ storm_season &lt;- storms %&gt;% # Start from storms data
 storm_season &lt;- storms %&gt;%
   mutate(danger = case_when(
     status == &quot;hurricane&quot; ~ &quot;high&quot;,
-    TRUE ~ &quot;moderate&quot; # 
+    TRUE ~ &quot;moderate&quot; # catchall
   )
   )</code></pre>
 </div>

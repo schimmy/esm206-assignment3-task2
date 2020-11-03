@@ -125,7 +125,7 @@ Check the output after running the code.
 mpg_make_model <- mpg %>% # Start with mpg
   unite(col = make_model, # Create a new column called 'make_model'
         c(manufacturer, model), # That combines the manufacturer & model column
-        sep = "___" # Puts "HEY!" between the pieces (default is underscore)
+        sep = "___" # Puts "___" between the pieces (default is underscore)
         ) 
 
 # Feel free to try different separators in the `sep = ""` argument above.
@@ -313,7 +313,7 @@ Note: If you add another condition within `case_when()` that is `TRUE ~ "some th
 storm_season <- storms %>%
   mutate(danger = case_when(
     status == "hurricane" ~ "high",
-    TRUE ~ "moderate" # 
+    TRUE ~ "moderate" # catchall
   )
   )
 
